@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		BF77CD124BE85069B20072E0 /* Pods_Slack_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A46F4B5C46332A1FD6522C /* Pods_Slack_App.framework */; };
+		D95EC1A9241A732A00FD8555 /* ChatVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC1A8241A732A00FD8555 /* ChatVc.swift */; };
+		D95EC1AB241A733F00FD8555 /* ChannelVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC1AA241A733F00FD8555 /* ChannelVc.swift */; };
+		D95EC1B1241A7E0300FD8555 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95EC1AF241A7E0300FD8555 /* SWRevealViewController.m */; };
 		D9FDB945241843C900E49542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDB944241843C900E49542 /* AppDelegate.swift */; };
 		D9FDB947241843C900E49542 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDB946241843C900E49542 /* SceneDelegate.swift */; };
-		D9FDB949241843C900E49542 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDB948241843C900E49542 /* ViewController.swift */; };
 		D9FDB94C241843C900E49542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FDB94A241843C900E49542 /* Main.storyboard */; };
 		D9FDB94E241843CC00E49542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9FDB94D241843CC00E49542 /* Assets.xcassets */; };
 		D9FDB951241843CC00E49542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FDB94F241843CC00E49542 /* LaunchScreen.storyboard */; };
-		D9FDB95C2418453300E49542 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FDB95B2418453300E49542 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		37A46F4B5C46332A1FD6522C /* Pods_Slack_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slack_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6204526F978FACB69185E965 /* Pods-Slack App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slack App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slack App/Pods-Slack App.release.xcconfig"; sourceTree = "<group>"; };
 		86C42763DE4C7B8B2799F470 /* Pods-Slack App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slack App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slack App/Pods-Slack App.debug.xcconfig"; sourceTree = "<group>"; };
+		D95EC1A8241A732A00FD8555 /* ChatVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVc.swift; sourceTree = "<group>"; };
+		D95EC1AA241A733F00FD8555 /* ChannelVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVc.swift; sourceTree = "<group>"; };
+		D95EC1AF241A7E0300FD8555 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D95EC1B0241A7E0300FD8555 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		D95EC1B2241A7E9900FD8555 /* Slack App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slack App-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9FDB941241843C900E49542 /* Slack App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slack App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FDB944241843C900E49542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9FDB946241843C900E49542 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9FDB948241843C900E49542 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9FDB94B241843C900E49542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9FDB94D241843CC00E49542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9FDB950241843CC00E49542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9FDB952241843CC00E49542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9FDB9592418453200E49542 /* Slack App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slack App-Bridging-Header.h"; sourceTree = "<group>"; };
-		D9FDB95A2418453300E49542 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "Smack Assets/SWReveal/SWRevealViewController.h"; sourceTree = SOURCE_ROOT; };
-		D9FDB95B2418453300E49542 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "Smack Assets/SWReveal/SWRevealViewController.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D95EC1A5241A729B00FD8555 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D95EC1A6241A72A800FD8555 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D95EC1A7241A72AE00FD8555 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D95EC1A8241A732A00FD8555 /* ChatVc.swift */,
+				D95EC1AA241A733F00FD8555 /* ChannelVc.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D9FDB938241843C900E49542 = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +109,12 @@
 		D9FDB943241843C900E49542 /* Slack App */ = {
 			isa = PBXGroup;
 			children = (
+				D95EC1A7241A72AE00FD8555 /* Controller */,
+				D95EC1A6241A72A800FD8555 /* Views */,
+				D95EC1A5241A729B00FD8555 /* Models */,
 				D9FDB9582418451300E49542 /* SupportingFiles */,
 				D9FDB944241843C900E49542 /* AppDelegate.swift */,
 				D9FDB946241843C900E49542 /* SceneDelegate.swift */,
-				D9FDB948241843C900E49542 /* ViewController.swift */,
 				D9FDB94A241843C900E49542 /* Main.storyboard */,
 				D9FDB94D241843CC00E49542 /* Assets.xcassets */,
 				D9FDB94F241843CC00E49542 /* LaunchScreen.storyboard */,
@@ -99,9 +126,9 @@
 		D9FDB9582418451300E49542 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				D9FDB95A2418453300E49542 /* SWRevealViewController.h */,
-				D9FDB95B2418453300E49542 /* SWRevealViewController.m */,
-				D9FDB9592418453200E49542 /* Slack App-Bridging-Header.h */,
+				D95EC1B0241A7E0300FD8555 /* SWRevealViewController.h */,
+				D95EC1AF241A7E0300FD8555 /* SWRevealViewController.m */,
+				D95EC1B2241A7E9900FD8555 /* Slack App-Bridging-Header.h */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -225,10 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9FDB949241843C900E49542 /* ViewController.swift in Sources */,
+				D95EC1AB241A733F00FD8555 /* ChannelVc.swift in Sources */,
+				D95EC1A9241A732A00FD8555 /* ChatVc.swift in Sources */,
+				D95EC1B1241A7E0300FD8555 /* SWRevealViewController.m in Sources */,
 				D9FDB945241843C900E49542 /* AppDelegate.swift in Sources */,
 				D9FDB947241843C900E49542 /* SceneDelegate.swift in Sources */,
-				D9FDB95C2418453300E49542 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
