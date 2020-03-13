@@ -19,4 +19,10 @@ class LoginVc: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func accountBtn(_ sender: Any) {
+        performSegue(withIdentifier: to_Account, sender: nil)
+    }
+    
+    
+    
 }
