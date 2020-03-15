@@ -13,6 +13,7 @@
 		D95EC1AB241A733F00FD8555 /* ChannelVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC1AA241A733F00FD8555 /* ChannelVc.swift */; };
 		D95EC1B1241A7E0300FD8555 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95EC1AF241A7E0300FD8555 /* SWRevealViewController.m */; };
 		D95EC1B4241A8ED100FD8555 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95EC1B3241A8ED100FD8555 /* GradientView.swift */; };
+		D997D99B241D545B001CCD39 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D997D99A241D545B001CCD39 /* AuthServices.swift */; };
 		D9CBF6E9241BBF0700AE48BC /* AccountVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBF6E8241BBF0700AE48BC /* AccountVc.swift */; };
 		D9CBF6EC241BBF6400AE48BC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBF6EB241BBF6400AE48BC /* Constant.swift */; };
 		D9FDB945241843C900E49542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDB944241843C900E49542 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		D95EC1B0241A7E0300FD8555 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D95EC1B2241A7E9900FD8555 /* Slack App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slack App-Bridging-Header.h"; sourceTree = "<group>"; };
 		D95EC1B3241A8ED100FD8555 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D997D99A241D545B001CCD39 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		D9CBF6E8241BBF0700AE48BC /* AccountVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVc.swift; sourceTree = "<group>"; };
 		D9CBF6EB241BBF6400AE48BC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D9FDB941241843C900E49542 /* Slack App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slack App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D997D999241D5439001CCD39 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D997D99A241D545B001CCD39 /* AuthServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D9CBF6EA241BBF4F00AE48BC /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		D9FDB943241843C900E49542 /* Slack App */ = {
 			isa = PBXGroup;
 			children = (
+				D997D999241D5439001CCD39 /* Services */,
 				D9CBF6EA241BBF4F00AE48BC /* Utilites */,
 				D95EC1A7241A72AE00FD8555 /* Controller */,
 				D95EC1A6241A72A800FD8555 /* Views */,
@@ -277,6 +288,7 @@
 				D95EC1A9241A732A00FD8555 /* ChatVc.swift in Sources */,
 				D95EC1B4241A8ED100FD8555 /* GradientView.swift in Sources */,
 				D95EC1B1241A7E0300FD8555 /* SWRevealViewController.m in Sources */,
+				D997D99B241D545B001CCD39 /* AuthServices.swift in Sources */,
 				D9374A3D241AA1AE00F7DD05 /* LoginVc.swift in Sources */,
 				D9FDB945241843C900E49542 /* AppDelegate.swift in Sources */,
 				D9CBF6EC241BBF6400AE48BC /* Constant.swift in Sources */,
