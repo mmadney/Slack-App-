@@ -373,6 +373,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountTapped:" destination="PLE-h0-VV5" eventType="touchUpInside" id="gIh-Cu-mmL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9C-N1-lUd">
                                 <rect key="frame" x="160" y="236.5" width="94" height="130"/>
@@ -381,6 +384,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Choose Avatar"/>
+                                <connections>
+                                    <action selector="choiceAvtarTapped:" destination="PLE-h0-VV5" eventType="touchUpInside" id="YCP-3N-C73"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create An Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-Xn-GSO">
                                 <rect key="frame" x="98" y="48" width="218.5" height="32.5"/>
@@ -399,6 +405,9 @@
                                 <rect key="frame" x="118.5" y="376.5" width="177" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Generate background color"/>
+                                <connections>
+                                    <action selector="GenerateBackGroundColorTapped:" destination="PLE-h0-VV5" eventType="touchUpInside" id="mCX-nZ-upq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -426,6 +435,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="ywU-RY-xUR"/>
                     <connections>
+                        <outlet property="emailTxt" destination="ziS-x9-7cf" id="cMX-yk-YkT"/>
+                        <outlet property="passwordTxt" destination="irF-u6-uXc" id="KUi-1c-IhO"/>
+                        <outlet property="userNameTxt" destination="Hav-QG-kje" id="e50-ta-3vQ"/>
                         <segue destination="gRh-ZL-3vK" kind="unwind" identifier="unWindToChannel" unwindAction="prepareForUnWindWithSegue:" id="dNb-UE-XJH"/>
                     </connections>
                 </viewController>

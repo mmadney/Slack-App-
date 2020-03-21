@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class Authservice {
     
@@ -36,18 +37,35 @@ class Authservice {
     
     var Email : Bool {
         get {
-            return defualts.bool(forKey: userEmail)
+            return defualts.bool(forKey: bool_Email)
         }
         set {
-            defualts.set(newValue, forKey: userEmail)
+            defualts.set(newValue, forKey: bool_Email)
+        }
+    }
+    
+    var userEmail : String {
+        get {
+            return defualts.value(forKey: user_Email) as! String
+        }
+        set {
+            defualts.set(newValue, forKey: user_Email)
+        }
+    }
+    
+    var autohToken : String {
+        get {
+            return defualts.value(forKey: authoreToken) as!String
+        }
+        set {
+            defualts.set(newValue, forKey: authoreToken)
         }
     }
     
     func registerUser(email : String, password : String, completion : @escaping completionHandler) {
         let lowecaseEmail = email.lowercased()
-        let header : HTTPHeaders = ["Content_type": "application/json; charset=utf-8" ]
         let body  = ["email": lowecaseEmail , "password" : password ]
-        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: Header).responseString { (response) in
             if response.error == nil {
                 completion(true)
             }else{
@@ -57,7 +75,42 @@ class Authservice {
         
     }
     
-
+   func loginUser(email:String, password:String, completion : @escaping completionHandler) {
+        let lowecaseEmail = email.lowercased()
+        let body = ["email" : lowecaseEmail , "password" : password]
+        AF.request(URL_LOGIN, method: .post, parameters: body, encoding : JSONEncoding.default, headers: Header).responseJSON { (response) in
+            
+//            switch response.result {
+//            case .success(let value) :
+//                if let jason = value as? [String : Any] {
+//                    let email = jason["user"] as! String
+//                    let token = jason["token"] as! String
+//                    self.userEmail = email
+//                    self.autohToken = token
+//                    self.isloggedin = true
+//                    completion(true)
+//                }
+//            case .failure(let error) :
+//                debugPrint(error)
+//                completion(false)
+//            }
+            switch response.result {
+            
+            case .success(let data) :
+                let jason = JSON(data)
+                self.userEmail = jason["user"].stringValue
+                self.autohToken = jason["token"].stringValue
+            case .failure(let error):
+                debugPrint(error)
+                completion(false)
+         
+                
+            }
+           
+        }
+        
+    }
+    
     
     
 }
