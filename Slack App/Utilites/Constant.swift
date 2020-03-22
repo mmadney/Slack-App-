@@ -13,6 +13,8 @@ import Alamofire
 let Base_Url = "http://localhost:3005/v1/"
 let URL_REGISTER = "\(Base_Url)account/register"
 let URL_LOGIN = "\(Base_Url)account/login"
+let URl_CreateUser = "\(Base_Url)user/add"
+
 //completion
 typealias completionHandler = (_ Sucess: Bool) -> ()
 
@@ -30,3 +32,7 @@ let unWind = "unWindToChannel"
 
 //Header
 let Header : HTTPHeaders = ["Content_type" : "application/json; charset=utf_8"]
+let CreateUserHeader : HTTPHeaders = [
+    "Authorization" : "Bearer\(Authservice.instance.autohToken)",
+     "Content_type" : "application/json; charset=utf_8"
+]

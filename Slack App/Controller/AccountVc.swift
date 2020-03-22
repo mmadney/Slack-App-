@@ -14,6 +14,9 @@ class AccountVc: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     
+    var avtarname = "ProfileDefualt"
+    var avatarColor = "[0.5,0.5,0.5,1]"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,9 @@ class AccountVc: UIViewController {
     }
     
     @IBAction func createAccountTapped(_ sender: Any) {
+        guard let name = userNameTxt.text , userNameTxt.text != "" else {
+            return
+        }
         guard let password = passwordTxt.text , passwordTxt.text != "" else {
             return
         }
@@ -45,7 +51,12 @@ class AccountVc: UIViewController {
             if sucess {
                 Authservice.instance.loginUser(email: email, password: password) { (sucess) in
                     if sucess {
-                        print("loggin user!")
+                        Authservice.instance.createUser(name: name, email: email, avatarName: self.avtarname, avatarColor: self.avatarColor) { (sucess) in
+                            if sucess {
+                                
+                                self.performSegue(withIdentifier: unWind, sender: nil)
+                            }
+                        }
                     }
                 }
             }
