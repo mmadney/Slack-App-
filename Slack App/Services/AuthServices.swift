@@ -100,6 +100,7 @@ class Authservice {
                 let jason = JSON(data)
                 self.userEmail = jason["user"].stringValue
                 self.autohToken = jason["token"].stringValue
+                completion(true)
             case .failure(let error):
                 debugPrint(error)
                 completion(false)
@@ -119,7 +120,6 @@ class Authservice {
             "avatarname" : avatarName,
             "avatarColor" : avatarColor
         ]
-        
         AF.request(URl_CreateUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: CreateUserHeader).responseJSON { (response) in
             switch response.result {
             case .success(let data) :

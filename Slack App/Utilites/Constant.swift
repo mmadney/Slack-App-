@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 
 //URL Constant
-let Base_Url = "http://localhost:3005/v1/"
-let URL_REGISTER = "\(Base_Url)account/register"
-let URL_LOGIN = "\(Base_Url)account/login"
-let URl_CreateUser = "\(Base_Url)user/add"
+let Base_Url = "https://alexanria-chat-app.herokuapp.com/"
+let URL_REGISTER = "\(Base_Url)v1/account/register"
+let URL_LOGIN = "\(Base_Url)v1/account/login"
+let URl_CreateUser = "\(Base_Url)v1/user/add"
 
 //completion
 typealias completionHandler = (_ Sucess: Bool) -> ()
@@ -25,14 +25,23 @@ typealias completionHandler = (_ Sucess: Bool) -> ()
  let user_Email = "userEmail"
  let authoreToken = "authoreToken"
 
+//Notifaction Constant
+let Notif_UserData_DidChange = Notification.Name("notifUserDataChanged")
+
+//Color
+let placeHolderColor = #colorLiteral(red: 0.2381943686, green: 0.1323584321, blue: 0.5537753807, alpha: 0.575395976)
+
 //Segue
 let to_Account = "ToAcoount"
 let unWind = "unWindToChannel"
-
+let To_AvatarPicker  = "ToAvatarPicker "
 
 //Header
 let Header : HTTPHeaders = ["Content_type" : "application/json; charset=utf_8"]
 let CreateUserHeader : HTTPHeaders = [
-    "Authorization" : "Bearer\(Authservice.instance.autohToken)",
+    "Authorization" : "Bearer \(Authservice.instance.autohToken)",
      "Content_type" : "application/json; charset=utf_8"
 ]
+
+//ReuseIdentfier
+let AvatarPickerCell = "AvatarPickerCell"

@@ -13,30 +13,55 @@ class AccountVc: UIViewController {
     @IBOutlet weak var userNameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var activityIndictor: UIActivityIndicatorView!
     
     var avtarname = "ProfileDefualt"
     var avatarColor = "[0.5,0.5,0.5,1]"
-    
+    var bgcolor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activityIndictor.isHidden = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handdleTap(_:)))
+        view.addGestureRecognizer(tap)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+      if UserDataServices.instance.avatarname != "" {
+          self.userImg.image = UIImage(named: UserDataServices.instance.avatarname)
+          self.avtarname = UserDataServices.instance.avatarname
+        if avtarname.contains("light") && bgcolor == nil {
+            userImg.backgroundColor = UIColor.lightGray
+        }
+       }
     }
     
     @IBAction func closeBtn(_ sender: Any) {
-        performSegue(withIdentifier: unWind, sender: nil)
+        
+    }
+    
+    @objc func handdleTap(_ sender: Any){
+        view.endEditing(true)
     }
     
     
     @IBAction func choiceAvtarTapped(_ sender: Any) {
-        
+          performSegue(withIdentifier: To_AvatarPicker, sender: nil)
     }
     
     @IBAction func GenerateBackGroundColorTapped(_ sender: Any) {
-        
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
+        bgcolor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        UIView.animate(withDuration: 0.2) {
+            self.userImg.backgroundColor = self.bgcolor
+        }
     }
     
     @IBAction func createAccountTapped(_ sender: Any) {
+        activityIndictor.isHidden = false
+        activityIndictor.startAnimating()
         guard let name = userNameTxt.text , userNameTxt.text != "" else {
             return
         }
@@ -46,15 +71,16 @@ class AccountVc: UIViewController {
         guard let email = emailTxt.text , emailTxt.text != "" else {
             return
         }
-        
         Authservice.instance.registerUser(email: email, password: password) { (sucess) in
             if sucess {
                 Authservice.instance.loginUser(email: email, password: password) { (sucess) in
                     if sucess {
                         Authservice.instance.createUser(name: name, email: email, avatarName: self.avtarname, avatarColor: self.avatarColor) { (sucess) in
                             if sucess {
-                                
-                                self.performSegue(withIdentifier: unWind, sender: nil)
+                                self.activityIndictor.isHidden = true
+                                self.activityIndictor.stopAnimating()
+                                self.unwindtoChannel()
+                                NotificationCenter.default.post(name: Notif_UserData_DidChange, object: nil)
                             }
                         }
                     }
@@ -62,6 +88,9 @@ class AccountVc: UIViewController {
             }
         }
     }
-    
+    func unwindtoChannel(){
+        performSegue(withIdentifier: unWind, sender: nil)
+    }
+
     
 }

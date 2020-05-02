@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="113"/>
+            <point key="canvasLocation" x="-113" y="83"/>
         </scene>
         <!--Chat Vc-->
         <scene sceneID="O9z-M1-QDw">
@@ -103,7 +104,7 @@
                                 <color key="textColor" red="0.98039215690000003" green="0.97254901959999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7p9-VE-Hxr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7p9-VE-Hxr" customClass="RoundImageView" customModule="Slack_App" customModuleProvider="target">
                                 <rect key="frame" x="20" y="733" width="99" height="99"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf4-y4-b6L">
@@ -113,7 +114,7 @@
                                     <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ygX-RA-Adh" kind="show" id="r2F-iL-Jr8"/>
+                                    <segue destination="ygX-RA-Adh" kind="presentation" modalPresentationStyle="fullScreen" id="r2F-iL-Jr8"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-IA-IYk">
@@ -162,26 +163,26 @@
             <objects>
                 <viewController id="ygX-RA-Adh" customClass="LoginVc" customModule="Slack_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fFh-oj-fss">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kv3-nV-NUn">
-                                <rect key="frame" x="349" y="42" width="28" height="28"/>
+                                <rect key="frame" x="349" y="86" width="28" height="28"/>
                                 <state key="normal" backgroundImage="closeButton"/>
                                 <connections>
                                     <action selector="closeBtn:" destination="ygX-RA-Adh" eventType="touchUpInside" id="pmI-cr-KRj"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="NKE-lG-yBT">
-                                <rect key="frame" x="50" y="192" width="314" height="71"/>
+                                <rect key="frame" x="50" y="236" width="314" height="72.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJa-Fo-9rA">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJa-Fo-9rA" customClass="texetPlaceHolder" customModule="Slack_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="18.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaT-wn-XDK" customClass="GradientView" customModule="Slack_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="26" width="314" height="5"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="314" height="5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="UV8-A2-EvR"/>
@@ -195,13 +196,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8P-9m-eY6">
-                                        <rect key="frame" x="0.0" y="40" width="314" height="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8P-9m-eY6" customClass="texetPlaceHolder" customModule="Slack_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="41.5" width="314" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7H-MU-0F1" customClass="GradientView" customModule="Slack_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="314" height="5"/>
+                                        <rect key="frame" x="0.0" y="67.5" width="314" height="5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="822-OR-Gg6"/>
@@ -218,7 +219,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSH-6r-jFQ">
-                                <rect key="frame" x="93" y="313" width="228" height="40"/>
+                                <rect key="frame" x="93" y="358.5" width="228" height="40"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.41960784309999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="y24-fi-8nW"/>
@@ -229,7 +230,7 @@
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-Z8-wQj">
-                                <rect key="frame" x="125.5" y="82" width="163.5" height="80"/>
+                                <rect key="frame" x="125.5" y="126" width="163.5" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smackLogo" translatesAutoresizingMaskIntoConstraints="NO" id="jA7-ri-5oA">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -247,7 +248,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19M-ua-10K">
-                                <rect key="frame" x="126" y="353" width="162" height="23"/>
+                                <rect key="frame" x="126" y="398.5" width="162" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <state key="normal" title="Don't have an account? Sign up here"/>
                                 <connections>
@@ -275,7 +276,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yca-RZ-amo"/>
                     <connections>
-                        <segue destination="PLE-h0-VV5" kind="show" identifier="ToAcoount" id="1Su-N7-IzF"/>
+                        <segue destination="PLE-h0-VV5" kind="presentation" identifier="ToAcoount" modalPresentationStyle="fullScreen" id="1Su-N7-IzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fcf-Cd-Mx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -287,11 +288,11 @@
             <objects>
                 <viewController id="PLE-h0-VV5" customClass="AccountVc" customModule="Slack_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cWJ-ac-lyA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY0-oX-STG">
-                                <rect key="frame" x="357" y="10" width="28" height="28"/>
+                                <rect key="frame" x="357" y="54" width="28" height="28"/>
                                 <state key="normal" backgroundImage="closeButton"/>
                                 <connections>
                                     <action selector="closeBtn:" destination="PLE-h0-VV5" eventType="touchUpInside" id="Tr0-H5-NGp"/>
@@ -299,15 +300,15 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="7bf-Hk-KKk">
-                                <rect key="frame" x="50" y="100.5" width="314" height="111"/>
+                                <rect key="frame" x="50" y="144.5" width="314" height="114"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-QG-kje">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-QG-kje" customClass="texetPlaceHolder" customModule="Slack_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="18.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1F-cR-m7d" customClass="GradientView" customModule="Slack_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="26" width="314" height="5"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="314" height="5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="pxO-0a-tcX"/>
@@ -321,13 +322,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ziS-x9-7cf">
-                                        <rect key="frame" x="0.0" y="40" width="314" height="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ziS-x9-7cf" customClass="texetPlaceHolder" customModule="Slack_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="41.5" width="314" height="18.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTX-8m-8MZ" customClass="GradientView" customModule="Slack_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="314" height="5"/>
+                                        <rect key="frame" x="0.0" y="69" width="314" height="5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="WBL-BU-esQ"/>
@@ -341,13 +342,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irF-u6-uXc">
-                                        <rect key="frame" x="0.0" y="80" width="314" height="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="irF-u6-uXc" customClass="texetPlaceHolder" customModule="Slack_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="83" width="314" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJJ-Ge-ftK" customClass="GradientView" customModule="Slack_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="106" width="314" height="5"/>
+                                        <rect key="frame" x="0.0" y="109" width="314" height="5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="ntA-aD-mAv"/>
@@ -364,7 +365,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8m-uc-WRE">
-                                <rect key="frame" x="103.5" y="758" width="207" height="40"/>
+                                <rect key="frame" x="103.5" y="812" width="207" height="40"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.41960784309999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OZl-sb-4pn"/>
@@ -378,7 +379,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9C-N1-lUd">
-                                <rect key="frame" x="160" y="236.5" width="94" height="130"/>
+                                <rect key="frame" x="160" y="283.5" width="94" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="ixL-1J-YH1"/>
                                 </constraints>
@@ -389,29 +390,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create An Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-Xn-GSO">
-                                <rect key="frame" x="98" y="48" width="218.5" height="32.5"/>
+                                <rect key="frame" x="98" y="92" width="218.5" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.1450980392" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aJH-oC-Uts">
-                                <rect key="frame" x="157" y="237" width="100" height="99"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="aJH-oC-Uts" customClass="RoundImageView" customModule="Slack_App" customModuleProvider="target">
+                                <rect key="frame" x="157" y="283.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="QAx-97-L6s"/>
                                     <constraint firstAttribute="height" constant="100" id="t5n-M8-1xY"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpZ-zg-Vtb">
-                                <rect key="frame" x="118.5" y="376.5" width="177" height="29"/>
+                                <rect key="frame" x="118.5" y="423.5" width="177" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Generate background color"/>
                                 <connections>
                                     <action selector="GenerateBackGroundColorTapped:" destination="PLE-h0-VV5" eventType="touchUpInside" id="mCX-nZ-upq"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="g01-Ww-UjK">
+                                <rect key="frame" x="188.5" y="479.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.1450980392" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="g01-Ww-UjK" firstAttribute="centerY" secondItem="cWJ-ac-lyA" secondAttribute="centerY" constant="50" id="0wp-mV-o7W"/>
                             <constraint firstItem="jY0-oX-STG" firstAttribute="top" secondItem="Jbt-te-0Xp" secondAttribute="top" constant="10" id="7GX-pI-etV"/>
                             <constraint firstItem="T9C-N1-lUd" firstAttribute="centerX" secondItem="cWJ-ac-lyA" secondAttribute="centerX" id="NwT-Ih-zYC"/>
                             <constraint firstItem="gxE-Xn-GSO" firstAttribute="centerX" secondItem="cWJ-ac-lyA" secondAttribute="centerX" id="OTl-Xa-UWT"/>
@@ -430,15 +436,19 @@
                             <constraint firstItem="T9C-N1-lUd" firstAttribute="top" secondItem="aJH-oC-Uts" secondAttribute="top" id="oIR-7t-Idm"/>
                             <constraint firstItem="aJH-oC-Uts" firstAttribute="top" secondItem="7bf-Hk-KKk" secondAttribute="bottom" constant="25" id="pd0-8E-MJ7"/>
                             <constraint firstItem="mpZ-zg-Vtb" firstAttribute="centerX" secondItem="cWJ-ac-lyA" secondAttribute="centerX" id="tBO-1L-OdU"/>
+                            <constraint firstItem="g01-Ww-UjK" firstAttribute="centerX" secondItem="cWJ-ac-lyA" secondAttribute="centerX" id="xrL-4O-cSF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jbt-te-0Xp"/>
                     </view>
                     <navigationItem key="navigationItem" id="ywU-RY-xUR"/>
                     <connections>
+                        <outlet property="activityIndictor" destination="g01-Ww-UjK" id="XzJ-e7-FS6"/>
                         <outlet property="emailTxt" destination="ziS-x9-7cf" id="cMX-yk-YkT"/>
                         <outlet property="passwordTxt" destination="irF-u6-uXc" id="KUi-1c-IhO"/>
+                        <outlet property="userImg" destination="aJH-oC-Uts" id="d4Q-Q3-n4b"/>
                         <outlet property="userNameTxt" destination="Hav-QG-kje" id="e50-ta-3vQ"/>
-                        <segue destination="gRh-ZL-3vK" kind="unwind" identifier="unWindToChannel" unwindAction="prepareForUnWindWithSegue:" id="dNb-UE-XJH"/>
+                        <segue destination="E0B-kW-d8g" kind="presentation" identifier="ToAvatarPicker " modalPresentationStyle="fullScreen" id="IcM-qo-BWc"/>
+                        <segue destination="gRh-ZL-3vK" kind="unwind" identifier="unWindToChannel" unwindAction="prepareForUnWindWithSegue:" id="Poi-tu-jcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DxR-BZ-ZDA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -446,12 +456,105 @@
             </objects>
             <point key="canvasLocation" x="3147.826086956522" y="-225.00000000000003"/>
         </scene>
+        <!--Avatar Picker Vc-->
+        <scene sceneID="JDq-1i-tS7">
+            <objects>
+                <viewController id="E0B-kW-d8g" customClass="AvatarPickerVc" customModule="Slack_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xNb-l6-3NV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="864-hm-FXf">
+                                <rect key="frame" x="20" y="54" width="28" height="28"/>
+                                <state key="normal" image="smackBack"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="E0B-kW-d8g" eventType="touchUpInside" id="3fy-OB-L7h"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-vm-u0s">
+                                <rect key="frame" x="132" y="74" width="150" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="B2j-aI-DBF"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Dark"/>
+                                    <segment title="Light"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlChanged:" destination="E0B-kW-d8g" eventType="valueChanged" id="svu-bq-0B7"/>
+                                </connections>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2YM-4U-iwf">
+                                <rect key="frame" x="0.0" y="135" width="414" height="741"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ffc-4F-N3E">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AvatarPickerCell" id="Z7d-Fv-b2w" customClass="AvatarCell" customModule="Slack_App" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8x3-K5-THb">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark0" translatesAutoresizingMaskIntoConstraints="NO" id="dOC-zh-qm6">
+                                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="GCD-4b-glo"/>
+                                                        <constraint firstAttribute="width" constant="60" id="uyX-7a-Fzm"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dOC-zh-qm6" firstAttribute="leading" secondItem="8x3-K5-THb" secondAttribute="leading" constant="10" id="EWH-Al-bVY"/>
+                                                <constraint firstAttribute="bottom" secondItem="dOC-zh-qm6" secondAttribute="bottom" constant="10" id="G55-HO-DM3"/>
+                                                <constraint firstAttribute="trailing" secondItem="dOC-zh-qm6" secondAttribute="trailing" constant="10" id="f9K-Ha-dPS"/>
+                                                <constraint firstItem="dOC-zh-qm6" firstAttribute="top" secondItem="8x3-K5-THb" secondAttribute="top" constant="10" id="uaG-j6-ddt"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="avatarImg" destination="dOC-zh-qm6" id="Fz4-G3-qkT"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="864-hm-FXf" firstAttribute="leading" secondItem="3d3-B4-4wp" secondAttribute="leading" constant="20" id="GYv-Nc-Oxw"/>
+                            <constraint firstItem="2YM-4U-iwf" firstAttribute="leading" secondItem="3d3-B4-4wp" secondAttribute="leading" id="HvW-vG-wix"/>
+                            <constraint firstItem="864-hm-FXf" firstAttribute="top" secondItem="3d3-B4-4wp" secondAttribute="top" constant="10" id="Kki-pK-mjk"/>
+                            <constraint firstItem="cWv-vm-u0s" firstAttribute="top" secondItem="3d3-B4-4wp" secondAttribute="top" constant="30" id="S9F-XF-UKh"/>
+                            <constraint firstAttribute="bottom" secondItem="2YM-4U-iwf" secondAttribute="bottom" constant="20" symbolic="YES" id="Ts4-c6-b9k"/>
+                            <constraint firstItem="2YM-4U-iwf" firstAttribute="trailing" secondItem="3d3-B4-4wp" secondAttribute="trailing" id="jnF-3B-6Zl"/>
+                            <constraint firstItem="2YM-4U-iwf" firstAttribute="top" secondItem="cWv-vm-u0s" secondAttribute="bottom" constant="30" id="nh5-mG-Oyd"/>
+                            <constraint firstItem="cWv-vm-u0s" firstAttribute="centerX" secondItem="xNb-l6-3NV" secondAttribute="centerX" id="wim-8k-jaG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3d3-B4-4wp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gi3-Jw-Mgs"/>
+                    <connections>
+                        <outlet property="CollectionView" destination="2YM-4U-iwf" id="3z1-fE-INb"/>
+                        <outlet property="segmentTheme" destination="cWv-vm-u0s" id="ALu-aq-7PX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wf7-26-rSy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4076.811594202899" y="-225"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addChannelButton" width="22" height="22"/>
         <image name="closeButton" width="28" height="28"/>
+        <image name="dark0" width="100" height="100"/>
         <image name="menuProfileIcon" width="99" height="99"/>
-        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="profileDefault" width="192" height="192"/>
+        <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>
     </resources>
