@@ -105,20 +105,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7p9-VE-Hxr" customClass="RoundImageView" customModule="Slack_App" customModuleProvider="target">
-                                <rect key="frame" x="20" y="733" width="99" height="99"/>
+                                <rect key="frame" x="20" y="732" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ClX-eV-qF4"/>
+                                    <constraint firstAttribute="width" constant="100" id="Ihy-Kv-fef"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf4-y4-b6L">
-                                <rect key="frame" x="169" y="765" width="49" height="35"/>
+                                <rect key="frame" x="170" y="764.5" width="49" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ygX-RA-Adh" kind="presentation" modalPresentationStyle="fullScreen" id="r2F-iL-Jr8"/>
+                                    <action selector="LoginBtn:" destination="iyO-G0-cPJ" eventType="touchUpInside" id="b6s-TC-ZwZ"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-IA-IYk">
-                                <rect key="frame" x="0.0" y="141" width="414" height="572"/>
+                                <rect key="frame" x="0.0" y="141" width="414" height="571"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOi-sS-erG">
@@ -153,6 +157,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="xf4-y4-b6L" id="YFH-Z4-hdT"/>
+                        <outlet property="userImg" destination="7p9-VE-Hxr" id="6Ua-ST-kSn"/>
+                        <segue destination="ygX-RA-Adh" kind="presentation" identifier="to_Login" modalPresentationStyle="fullScreen" id="eY4-XV-547"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90d-rF-I3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,6 +237,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtn:" destination="ygX-RA-Adh" eventType="touchUpInside" id="b7G-hc-xUd"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-Z8-wQj">
                                 <rect key="frame" x="125.5" y="126" width="163.5" height="80"/>

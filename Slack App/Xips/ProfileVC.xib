@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="Slack_App" customModuleProvider="target">
+            <connections>
+                <outlet property="ProfileImg" destination="Pot-vC-oiy" id="rqK-Pd-uFS"/>
+                <outlet property="bgView" destination="9HX-Bh-NUZ" id="6pX-1n-kp6"/>
+                <outlet property="email" destination="1y6-zq-NQM" id="crH-b7-62V"/>
+                <outlet property="userName" destination="IrU-o7-yAI" id="PHZ-32-yJg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HX-Bh-NUZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvR-s9-MQH" customClass="RoundView" customModule="Slack_App" customModuleProvider="target">
+                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1c-Mp-hjf">
+                            <rect key="frame" x="252" y="20" width="28" height="28"/>
+                            <state key="normal" image="closeButton"/>
+                            <connections>
+                                <action selector="closeModelPressed:" destination="-1" eventType="touchUpInside" id="t7L-jp-0zS"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n0j-3g-sSV">
+                            <rect key="frame" x="37" y="40" width="226.5" height="190.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKQ-1o-Okg">
+                                    <rect key="frame" x="49.5" y="0.0" width="127" height="27.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                                    <color key="textColor" red="0.25882352939999997" green="0.1450980392" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Pot-vC-oiy" customClass="RoundImageView" customModule="Slack_App" customModuleProvider="target">
+                                    <rect key="frame" x="63" y="35.5" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="tZe-t7-DyO"/>
+                                        <constraint firstAttribute="width" constant="100" id="uDc-4w-KCA"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mmadney" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrU-o7-yAI">
+                                    <rect key="frame" x="77.5" y="143.5" width="71.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.25882352939999997" green="0.1450980392" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohamedmadney1@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1y6-zq-NQM">
+                                    <rect key="frame" x="0.0" y="171" width="226.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.25882352939999997" green="0.1450980392" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ej-6W-LH1">
+                            <rect key="frame" x="114" y="253" width="72" height="39"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                            <state key="normal" title="Logout">
+                                <color key="titleColor" red="0.25882352939999997" green="0.1450980392" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="logOutPressed:" destination="-1" eventType="touchUpInside" id="abN-7A-RuD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="a1c-Mp-hjf" firstAttribute="top" secondItem="QvR-s9-MQH" secondAttribute="top" constant="20" id="Gfd-gM-UPC"/>
+                        <constraint firstItem="n0j-3g-sSV" firstAttribute="centerX" secondItem="QvR-s9-MQH" secondAttribute="centerX" id="PBc-Lf-AaB"/>
+                        <constraint firstAttribute="bottom" secondItem="4Ej-6W-LH1" secondAttribute="bottom" constant="8" id="Pmu-mg-6d5"/>
+                        <constraint firstItem="4Ej-6W-LH1" firstAttribute="centerX" secondItem="QvR-s9-MQH" secondAttribute="centerX" id="Y6c-eO-nNE"/>
+                        <constraint firstAttribute="trailing" secondItem="a1c-Mp-hjf" secondAttribute="trailing" constant="20" id="bdu-m2-4ri"/>
+                        <constraint firstItem="n0j-3g-sSV" firstAttribute="centerY" secondItem="QvR-s9-MQH" secondAttribute="centerY" constant="-15" id="kch-Nf-2Qu"/>
+                        <constraint firstAttribute="height" constant="300" id="nHX-dd-mhc"/>
+                        <constraint firstAttribute="width" constant="300" id="yZF-pt-EQv"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundCorner">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QvR-s9-MQH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9DU-Mw-ogk"/>
+                <constraint firstItem="9HX-Bh-NUZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Lbp-qy-Oea"/>
+                <constraint firstItem="9HX-Bh-NUZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UGG-eO-i4q"/>
+                <constraint firstItem="QvR-s9-MQH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VcR-Hx-ggi"/>
+                <constraint firstAttribute="bottom" secondItem="9HX-Bh-NUZ" secondAttribute="bottom" id="ad8-mU-WGu"/>
+                <constraint firstItem="9HX-Bh-NUZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pTE-ao-8wm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeButton" width="28" height="28"/>
+        <image name="profileDefault" width="192" height="192"/>
+    </resources>
+</document>

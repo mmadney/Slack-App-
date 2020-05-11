@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginVc: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class LoginVc: UIViewController {
         performSegue(withIdentifier: to_Account, sender: nil)
     }
     
+    @IBAction func loginBtn(_ sender: Any) {
+        
+    }
     
     
 }

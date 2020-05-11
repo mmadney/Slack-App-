@@ -35,6 +35,7 @@ let placeHolderColor = #colorLiteral(red: 0.2381943686, green: 0.1323584321, blu
 let to_Account = "ToAcoount"
 let unWind = "unWindToChannel"
 let To_AvatarPicker  = "ToAvatarPicker "
+let to_Login = "to_Login"
 
 //Header
 let Header : HTTPHeaders = ["Content_type" : "application/json; charset=utf_8"]

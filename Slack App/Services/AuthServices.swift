@@ -100,6 +100,7 @@ class Authservice {
                 let jason = JSON(data)
                 self.userEmail = jason["user"].stringValue
                 self.autohToken = jason["token"].stringValue
+                self.isloggedin = true
                 completion(true)
             case .failure(let error):
                 debugPrint(error)

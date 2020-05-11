@@ -13,12 +13,11 @@ class AccountVc: UIViewController {
     @IBOutlet weak var userNameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
-    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var userImg: RoundImageView!
     @IBOutlet weak var activityIndictor: UIActivityIndicatorView!
     
     var avtarname = "ProfileDefualt"
     var avatarColor = "[0.5,0.5,0.5,1]"
-    var bgcolor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class AccountVc: UIViewController {
       if UserDataServices.instance.avatarname != "" {
           self.userImg.image = UIImage(named: UserDataServices.instance.avatarname)
           self.avtarname = UserDataServices.instance.avatarname
-        if avtarname.contains("light") && bgcolor == nil {
+        if avtarname.contains("light") && userImg.checkBgCoLor() {
             userImg.backgroundColor = UIColor.lightGray
         }
        }
@@ -50,13 +49,7 @@ class AccountVc: UIViewController {
     }
     
     @IBAction func GenerateBackGroundColorTapped(_ sender: Any) {
-        let r = CGFloat(arc4random_uniform(255)) / 255
-        let g = CGFloat(arc4random_uniform(255)) / 255
-        let b = CGFloat(arc4random_uniform(255)) / 255
-        bgcolor = UIColor(red: r, green: g, blue: b, alpha: 1)
-        UIView.animate(withDuration: 0.2) {
-            self.userImg.backgroundColor = self.bgcolor
-        }
+        avatarColor = userImg.changeBackgroundColor()
     }
     
     @IBAction func createAccountTapped(_ sender: Any) {
