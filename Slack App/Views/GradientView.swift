@@ -10,6 +10,12 @@ import UIKit
 
 @IBDesignable
 class GradientView: UIView {
+    
+    @IBInspectable var roundCorner : CGFloat = 0{
+        didSet{
+            self.layer.cornerRadius = roundCorner
+        }
+    }
   
     @IBInspectable var topColor : UIColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1) {
         didSet{

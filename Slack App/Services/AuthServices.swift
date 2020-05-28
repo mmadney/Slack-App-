@@ -121,22 +121,40 @@ class Authservice {
             "avatarname" : avatarName,
             "avatarColor" : avatarColor
         ]
-        AF.request(URl_CreateUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: CreateUserHeader).responseJSON { (response) in
+        AF.request(URl_CreateUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             switch response.result {
             case .success(let data) :
-                let json = JSON(data)
-                let id = json["_id"].stringValue
-                let color = json["avatarColor"].stringValue
-                let avatarName = json["avatarName"].stringValue
-                let email = json["email"].stringValue
-                let name = json["name"].stringValue
-                UserDataServices.instance.setUserDataServices(id: id, email: email, avatarName: avatarName, name: name, avatarColor: color)
+                self.setUserInfo(data: data)
                 completion(true)
             case .failure(let error):
                 debugPrint(error)
                 completion(false)
             }
         }
+    }
+    
+    func findUserByEmail(completion : @escaping completionHandler) {
+        print(userEmail)
+        AF.request("\(URL_User_By_Email)\(userEmail)", method: .get, parameters: nil, headers: BEARER_HEADER).responseJSON { (response) in
+            switch response.result {
+            case .success(let data) :
+                self.setUserInfo(data: data)
+                completion(true)
+            case .failure(let error):
+                debugPrint(error)
+                completion(false)
+            }
+        }
+    }
+    
+    func setUserInfo(data: Any){
+        let json = JSON(data)
+        let id = json["_id"].stringValue
+        let color = json["avatarColor"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let email = json["email"].stringValue
+        let name = json["name"].stringValue
+        UserDataServices.instance.setUserDataServices(id: id, email: email, avatarName: avatarName, name: name, avatarColor: color)
     }
     
 }

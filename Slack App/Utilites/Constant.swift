@@ -14,6 +14,8 @@ let Base_Url = "https://alexanria-chat-app.herokuapp.com/"
 let URL_REGISTER = "\(Base_Url)v1/account/register"
 let URL_LOGIN = "\(Base_Url)v1/account/login"
 let URl_CreateUser = "\(Base_Url)v1/user/add"
+let URL_User_By_Email = "\(Base_Url)v1/user/byEmail/"
+let URL_Get_Channel = "\(Base_Url)v1/channel"
 
 //completion
 typealias completionHandler = (_ Sucess: Bool) -> ()
@@ -39,7 +41,7 @@ let to_Login = "to_Login"
 
 //Header
 let Header : HTTPHeaders = ["Content_type" : "application/json; charset=utf_8"]
-let CreateUserHeader : HTTPHeaders = [
+let BEARER_HEADER : HTTPHeaders = [
     "Authorization" : "Bearer \(Authservice.instance.autohToken)",
      "Content_type" : "application/json; charset=utf_8"
 ]
