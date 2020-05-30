@@ -16,6 +16,7 @@ let URL_LOGIN = "\(Base_Url)v1/account/login"
 let URl_CreateUser = "\(Base_Url)v1/user/add"
 let URL_User_By_Email = "\(Base_Url)v1/user/byEmail/"
 let URL_Get_Channel = "\(Base_Url)v1/channel"
+let URL_Get_Message = "\(Base_Url)v1/message/byChannel"
 
 //completion
 typealias completionHandler = (_ Sucess: Bool) -> ()
@@ -29,6 +30,8 @@ typealias completionHandler = (_ Sucess: Bool) -> ()
 
 //Notifaction Constant
 let Notif_UserData_DidChange = Notification.Name("notifUserDataChanged")
+let Notif_ChannelData_DidChange = Notification.Name("notifUserChannelsChanged")
+let Notif_Channel_Selected = Notification.Name("notifChannelSelected")
 
 //Color
 let placeHolderColor = #colorLiteral(red: 0.2381943686, green: 0.1323584321, blue: 0.5537753807, alpha: 0.575395976)
@@ -48,3 +51,7 @@ let BEARER_HEADER : HTTPHeaders = [
 
 //ReuseIdentfier
 let AvatarPickerCell = "AvatarPickerCell"
+
+//WebSocketEvENT
+let addChannelEvent = "newChannel"
+let getChhanelEvent = "channelCreated"

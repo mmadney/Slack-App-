@@ -36,7 +36,7 @@ class AccountVc: UIViewController {
     }
     
     @IBAction func closeBtn(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func handdleTap(_ sender: Any){

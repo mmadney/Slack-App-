@@ -78,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="menuBtn" destination="eCs-nM-cB4" id="Fdt-Qf-02f"/>
+                        <outlet property="slackLabel" destination="Ufx-yX-bau" id="I2Z-N1-Jyf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUm-M7-eDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,6 +125,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOi-sS-erG">
                                 <rect key="frame" x="312" y="99" width="22" height="22"/>
                                 <state key="normal" backgroundImage="addChannelButton"/>
+                                <connections>
+                                    <action selector="addchannelBtnTapped:" destination="iyO-G0-cPJ" eventType="touchUpInside" id="lSX-1m-YVS"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXS-Gb-uQV">
                                 <rect key="frame" x="0.0" y="131" width="414" height="581"/>

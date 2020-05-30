@@ -15,12 +15,10 @@ class MessageServcies {
     static let instance = MessageServcies()
     
     var channels = [Channel]()
+    var selectChannel : Channel?
+    var messages = [Message]()
     
     func getChannel(completion : @escaping completionHandler){
-        let channel1 = Channel(_id: "1", name: "general", description: "this general", __v: 5)
-        let channel2 = Channel(_id: "2", name: "development", description: "this general", __v: 5)
-        channels.append(channel1)
-        channels.append(channel2)
         AF.request(URL_Get_Channel, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             switch response.result{
             case .success(_):
@@ -45,9 +43,9 @@ class MessageServcies {
                     }
                 } catch let error {
                     print(error)
+                    completion(false)
                 }
-                
-                print(self.channels)
+                NotificationCenter.default.post(name: Notif_ChannelData_DidChange, object: nil)
 
             case .failure(let error):
                 debugPrint(error)
@@ -56,5 +54,46 @@ class MessageServcies {
         }
     }
     
+    func findAllMessageForChannel(channelid:String, completion: @escaping completionHandler){
+        AF.request("\(URL_Get_Message)\(channelid)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON{ (response) in
+            switch response.result {
+            case .success(_):
+                self.ClearMessage()
+                do {
+                    if let json = try JSON(data: response.data!).array {
+                        for item in json {
+                            let messageId = item["_id"].stringValue
+                            let messageBody = item["messageBody"].stringValue
+                            let userId = item["userId"].stringValue
+                            let channelId = item["channelId"].stringValue
+                            let userName = item["userName"].stringValue
+                            let userAvatar = item["userAvatar"].stringValue
+                            let userAvatarColor = item["userAvatarColor"].stringValue
+                            let timeStamp = item["timeStamp"].stringValue
+                            let message = Message(messageId: messageId, messageBody: messageBody, userId: userId, ChannelId: channelId, userName: userName, UserAvatar: userAvatar, UserAvatarColor: userAvatarColor, TimeStamp: timeStamp)
+                            self.messages.append(message)
+                        }
+                        completion(true)
+                    }
+                } catch let error {
+                    debugPrint(error)
+                    completion(false)
+                }
+            case .failure(let error):
+                debugPrint(error)
+                completion(false)
+            }
+            
+        }
+    }
+    
+    
+    func clearChannel(){
+        channels.removeAll()
+    }
+    
+    func ClearMessage(){
+        messages.removeAll()
+    }
 
 }

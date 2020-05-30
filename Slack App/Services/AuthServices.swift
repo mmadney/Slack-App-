@@ -118,7 +118,7 @@ class Authservice {
         let body : [String : Any] = [
             "name": name,
             "email": lowercaseEmail,
-            "avatarname" : avatarName,
+            "avatarName" : avatarName,
             "avatarColor" : avatarColor
         ]
         AF.request(URl_CreateUser, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in

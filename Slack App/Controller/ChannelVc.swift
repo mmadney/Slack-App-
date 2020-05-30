@@ -22,6 +22,15 @@ class ChannelVc: UIViewController,UITableViewDelegate , UITableViewDataSource {
         channelTable.dataSource = self
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(UserDataChanged(_:)), name: Notif_UserData_DidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(channelLoaded(_:)), name: Notif_ChannelData_DidChange, object: nil)
+        SocketServices.instance.getchannel { (sucess) in
+            if sucess {
+                self.channelTable.reloadData()
+            }
+        }
+    }
+    @objc func channelLoaded(_ notif: Notification){
+        self.channelTable.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         setupUserInfo()
@@ -56,6 +65,13 @@ class ChannelVc: UIViewController,UITableViewDelegate , UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageServcies.instance.channels[indexPath.row]
+        MessageServcies.instance.selectChannel = channel
+        NotificationCenter.default.post(name: Notif_Channel_Selected, object: nil)
+        self.revealViewController()?.revealToggle(animated: true)
+    }
+    
     func setupUserInfo(){
         if Authservice.instance.isloggedin {
             loginBtn.setTitle(UserDataServices.instance.name, for: .normal)
@@ -67,8 +83,21 @@ class ChannelVc: UIViewController,UITableViewDelegate , UITableViewDataSource {
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
+            channelTable.reloadData()
         }
     }
+    
+    @IBAction func addchannelBtnTapped(_ sender: Any) {
+        if Authservice.instance.isloggedin {
+            let addChannel = AddChannelVC()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
+        } else {
+            print("Please Login First")
+        }
+
+    }
+    
     
     
 

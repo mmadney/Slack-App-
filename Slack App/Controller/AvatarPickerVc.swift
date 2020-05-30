@@ -84,7 +84,6 @@ class AvatarPickerVc: UIViewController ,UICollectionViewDelegate ,UICollectionVi
         
     }
     
-    
-    
+
     
 }
