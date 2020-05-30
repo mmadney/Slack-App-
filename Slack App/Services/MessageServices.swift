@@ -55,7 +55,7 @@ class MessageServcies {
     }
     
     func findAllMessageForChannel(channelid:String, completion: @escaping completionHandler){
-        AF.request("\(URL_Get_Message)\(channelid)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON{ (response) in
+        AF.request("\(URL_Get_Message)/\(channelid)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON{ (response) in
             switch response.result {
             case .success(_):
                 self.ClearMessage()

@@ -51,6 +51,7 @@ let BEARER_HEADER : HTTPHeaders = [
 
 //ReuseIdentfier
 let AvatarPickerCell = "AvatarPickerCell"
+let messageCell = "messageCell"
 
 //WebSocketEvENT
 let addChannelEvent = "newChannel"

@@ -24,7 +24,7 @@ class ProfileVC: UIViewController {
         self.ProfileImg.image = UIImage(named: UserDataServices.instance.avatarname)
         self.userName.text = UserDataServices.instance.name
         self.email.text = UserDataServices.instance.email
-        self.ProfileImg.backgroundColor = UserDataServices.instance.returnUiColor()
+        self.ProfileImg.backgroundColor = UserDataServices.instance.returnUiColor(components: UserDataServices.instance.avatarColor)
         let closeToush = UITapGestureRecognizer(target: self, action: nil)
         bgView.addGestureRecognizer(closeToush)
     }
